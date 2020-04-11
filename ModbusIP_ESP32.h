@@ -20,6 +20,7 @@ class ModbusIP : public Modbus {
     public:
         ModbusIP();
         void config(const char* ssid, const char* password);
+	void config(const char *ssid, const char *password,uint8_t ip[4],uint8_t gateway[4],uint8_t subnet[4]);
         void task();
 };
 
