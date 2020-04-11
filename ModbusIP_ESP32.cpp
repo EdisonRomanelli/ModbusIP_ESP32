@@ -16,6 +16,12 @@ void ModbusIP::config(const char* ssid, const char* password) {
 	server.begin();
 }
 
+void ModbusIP::config(const char *ssid, const char *password,uint8_t ip[4],uint8_t gateway[4],uint8_t subnet[4]) {
+	WiFi.config(IPAddress(ip), IPAddress(gateway), IPAddress(subnet));
+	WiFi.begin(ssid, password);
+	server.begin();
+}
+
 void ModbusIP::task() {
 	WiFiClient client = server.available();
 
